@@ -7,27 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Sorting Visualizer</h1>
-    
-    <div class="controls">
-        <label for="algorithmSelect">Algorithm:</label>
-        <select id="algorithmSelect">
-            <option value="bubbleSort">Bubble Sort</option>
-            <option value="selectionSort">Selection Sort</option>
-            <option value="insertionSort">Insertion Sort</option>
-            <option value="quickSort">Quick Sort</option>
-        </select>
-        
-        <button id="sortButton">Sort</button>
-        <button id="newArrayButton">New Array</button>
-        <button id="pauseButton">Pause</button>
-        
-        <label for="speedControl">Speed:</label>
-        <input type="range" id="speedControl" min="50" max="500" value="100">
+    <div class="container">
+        <h1>Sorting Visualizer</h1>
+        <div class="controls">
+            <label for="algorithmSelect">Select Algorithm:</label>
+            <select id="algorithmSelect">
+                <option value="bubbleSort">Bubble Sort</option>
+                <option value="selectionSort">Selection Sort</option>
+                <option value="insertionSort">Insertion Sort</option>
+                <option value="quickSort">Quick Sort</option>
+            </select>
+            <button id="sortButton">Sort</button>
+            <button id="newArrayButton">New Array</button>
+            <label for="speedControl">Speed:</label>
+            <input type="range" id="speedControl" min="10" max="500" value="100">
+        </div>
+        <div id="bars" class="bars-container"></div>
+        <div class="stats">
+            <p>Swaps: <span id="swapsCount">0</span></p>
+            <p>Comparisons: <span id="comparisonsCount">0</span></p>
+            <p>Time Taken: <span id="timeTaken">0s</span></p>
+        </div>
     </div>
-
-    <div id="bars" class="bars-container"></div>
-
     <script src="script.js"></script>
 </body>
 </html>
