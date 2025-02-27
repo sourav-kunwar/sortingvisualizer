@@ -1,0 +1,67 @@
+Dark Mode or Theme Customization
+Dark Mode or Theme Customization<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <style>
+        :root {
+            --bg-color: white;
+            --text-color: black;
+        }
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: white;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: var(--bg-color);
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sorting Visualizer</h1>
+        <button onclick="toggleTheme()">Toggle Dark Mode</button>
+    </div>
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+        });
+    </script>
+</body>
+</html>
